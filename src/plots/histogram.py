@@ -1,6 +1,7 @@
 from src.setup import thesis_figure
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
 
 def plot_histogram(
@@ -10,8 +11,8 @@ def plot_histogram(
     title,
     xlabel,
     ylabel,
-    xticks,
-    xticklabels,
+    xticks=None,
+    xticklabels=None,
     save_path="plot.pdf",
     text_color="red",
     fontsize_ticks=12,
@@ -56,7 +57,7 @@ def plot_histogram(
 
     df = pd.read_csv(csv_file)
 
-    fig, ax = plt.subplots()
+    fig, ax = thesis_figure()
     counts, bins_out, patches = ax.hist(df[column], bins=bins, edgecolor=edgecolor)
 
     # Set axis labels and title
@@ -65,8 +66,10 @@ def plot_histogram(
     ax.set_title(title)
 
     # Set x-ticks and labels
-    ax.set_xticks(xticks)
-    ax.set_xticklabels(xticklabels, fontsize=fontsize_ticks)
+    if xticks is not None:
+        ax.set_xticks(xticks)
+    if xticklabels is not None:
+        ax.set_xticklabels(xticklabels, fontsize=fontsize_ticks)
 
     # Annotate counts on top of bars
     for count, patch in zip(counts, patches):
@@ -88,4 +91,5 @@ def plot_histogram(
     # Adjust layout and save
     fig.tight_layout()
     fig.savefig(save_path)
+    print(f"Saved figure to {save_path}")
     plt.close(fig)
