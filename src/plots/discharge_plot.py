@@ -20,7 +20,7 @@ def plot_discharge(
 
     df = pd.read_csv(csv_file)
 
-    fig, ax = plt.subplots()
+    fig, ax = thesis_figure()
     ax.plot(df["Time"], df[column])
 
     # Set axis labels and title

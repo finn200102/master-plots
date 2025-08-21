@@ -23,32 +23,219 @@ if __name__ == "__main__":
         CSV_PATH + "/event_charge_box_electrodes.csv",
         x_col="gap_fixed",
         y_col="event_charge",
-        title="Price by City",
-        xlabel="City",
-        ylabel="Price",
+        title="Spaltabstand vs Ladung",
+        xlabel="Spaltabstand d in cm",
+        ylabel="Ladung Q in C",
         sort_classes=True,
         y_scale="log",
-        save_path=FIGURES_PATH + "/event_charge_box_electrodes_gsp.pdf",
+        save_path=FIGURES_PATH + "/event_charge_box_electrodes_gap.pdf",
     )
+    plot_boxplots_from_csv_classes(
+        CSV_PATH + "/event_charge_box_plates.csv",
+        x_col="gap_fixed",
+        y_col="event_charge",
+        title="Spaltabstand vs Ladung",
+        xlabel="Spaltabstand d in cm",
+        ylabel="Ladung Q in C",
+        sort_classes=True,
+        y_scale="log",
+        save_path=FIGURES_PATH + "/event_charge_box_plates_gap.pdf",
+    )
+    """
     plot_boxplots_from_csv(
         CSV_PATH + "/event_charge_box_electrodes.csv",
         x_col="pd",
         y_col="event_charge",
         num_bins=5,
         title="pd vs Ladung",
-        xlabel="pd",
-        ylabel="Ladung",
+        xlabel="pd in mbar cm",
+        ylabel="Ladung Q in C",
         y_scale="log",
         save_path=FIGURES_PATH + "/event_charge_box_electrodes_pd.pdf",
     )
-    plot_boxplots_from_csv(
-        CSV_PATH + "/event_charge_box_electrodes.csv",
+    """
+    # event_distance
+    plot_boxplots_from_csv_classes(
+        CSV_PATH + "/event_distance_box_electrodes.csv",
         x_col="gap_fixed",
-        y_col="event_charge",
-        num_bins=5,
-        title="Spaltabstand vs Ladung",
-        xlabel="Spaltabstand",
-        ylabel="Ladung",
+        y_col="event_distance",
+        title="Spaltabstand vs Eventabstand",
+        xlabel="Spaltabstand d in cm",
+        ylabel="Eventabstand in s",
+        sort_classes=True,
         y_scale="log",
-        save_path=FIGURES_PATH + "/event_charge_box_electrodes_gap.pdf",
+        save_path=FIGURES_PATH + "/event_distance_box_electrodes_gap.pdf",
+    )
+    plot_boxplots_from_csv_classes(
+        CSV_PATH + "/event_distance_box_plates.csv",
+        x_col="gap_fixed",
+        y_col="event_distance",
+        title="Spaltabstand vs Eventabstand",
+        xlabel="Spaltabstand d in cm",
+        ylabel="Eventabstand in s",
+        sort_classes=True,
+        y_scale="log",
+        save_path=FIGURES_PATH + "/event_distance_box_plates_gap.pdf",
+    )
+    # event_duration
+    plot_boxplots_from_csv_classes(
+        CSV_PATH + "/event_duration_box_electrodes.csv",
+        x_col="gap_fixed",
+        y_col="event_duration",
+        title="Spaltabstand vs Eventlänge",
+        xlabel="Spaltabstand d in cm",
+        ylabel="Eventlänge in s",
+        sort_classes=True,
+        y_scale="log",
+        save_path=FIGURES_PATH + "/event_duration_box_electrodes_gap.pdf",
+    )
+    plot_boxplots_from_csv_classes(
+        CSV_PATH + "/event_duration_box_plates.csv",
+        x_col="gap_fixed",
+        y_col="event_duration",
+        title="Spaltabstand vs Eventlänge",
+        xlabel="Spaltabstand d in cm",
+        ylabel="Eventlänge in s",
+        sort_classes=True,
+        y_scale="log",
+        save_path=FIGURES_PATH + "/event_duration_box_plates_gap.pdf",
+    )
+    # event_energy
+    plot_boxplots_from_csv_classes(
+        CSV_PATH + "/event_energy_box_electrodes.csv",
+        x_col="gap_fixed",
+        y_col="event_energy",
+        title="Spaltabstand vs Eventenergie",
+        xlabel="Spaltabstand d in cm",
+        ylabel="Eventenergie J",
+        sort_classes=True,
+        y_scale="log",
+        save_path=FIGURES_PATH + "/event_energy_box_electrodes_gap.pdf",
+    )
+    plot_boxplots_from_csv_classes(
+        CSV_PATH + "/event_energy_box_plates.csv",
+        x_col="gap_fixed",
+        y_col="event_energy",
+        title="Spaltabstand vs Eventenergie",
+        xlabel="Spaltabstand d in cm",
+        ylabel="Eventenergie in J",
+        sort_classes=True,
+        y_scale="log",
+        save_path=FIGURES_PATH + "/event_energy_box_plates_gap.pdf",
+    )
+    # max_current
+    plot_boxplots_from_csv_classes(
+        CSV_PATH + "/max_current_box_electrodes.csv",
+        x_col="gap_fixed",
+        y_col="max_current",
+        title="Spaltabstand vs maximaler Strom",
+        xlabel="Spaltabstand d in cm",
+        ylabel="maximaler Strom $I_{max}$ in A",
+        sort_classes=True,
+        y_scale="log",
+        save_path=FIGURES_PATH + "/max_current_box_electrodes_gap.pdf",
+    )
+    plot_boxplots_from_csv_classes(
+        CSV_PATH + "/max_current_box_plates.csv",
+        x_col="gap_fixed",
+        y_col="max_current",
+        title="Spaltabstand vs maximaler Strom",
+        xlabel="Spaltabstand d in cm",
+        ylabel="maximaler Strom $I_{max}$ in A",
+        sort_classes=True,
+        y_scale="log",
+        save_path=FIGURES_PATH + "/max_current_box_plates_gap.pdf",
+    )
+    # precursor_distance
+    plot_boxplots_from_csv_classes(
+        CSV_PATH + "/precursor_distance_box_electrodes.csv",
+        x_col="gap_fixed",
+        y_col="precursor_distance",
+        title="Spaltabstand vs Vorläuferabstand",
+        xlabel="Spaltabstand d in cm",
+        ylabel="Vorläuferabstand in s",
+        sort_classes=True,
+        y_scale="log",
+        save_path=FIGURES_PATH + "/precursor_distance_box_electrodes_gap.pdf",
+    )
+    plot_boxplots_from_csv_classes(
+        CSV_PATH + "/precursor_distance_box_plates.csv",
+        x_col="gap_fixed",
+        y_col="precursor_distance",
+        title="Spaltabstand vs Vorläuferabstand",
+        xlabel="Spaltabstand d in cm",
+        ylabel="Vorläuferabstand in s",
+        sort_classes=True,
+        y_scale="log",
+        save_path=FIGURES_PATH + "/precursor_distance_box_plates_gap.pdf",
+    )
+    # precursor_distance_manual
+    plot_boxplots_from_csv_classes(
+        CSV_PATH + "/precursor_distance_manual_box_electrodes.csv",
+        x_col="gap_fixed",
+        y_col="precursor_distance_manual",
+        title="Spaltabstand vs Vorläuferabstand",
+        xlabel="Spaltabstand d in cm",
+        ylabel="Vorläuferabstand in s",
+        sort_classes=True,
+        y_scale="log",
+        save_path=FIGURES_PATH + "/precursor_distance_manual_box_electrodes_gap.pdf",
+    )
+    plot_boxplots_from_csv_classes(
+        CSV_PATH + "/precursor_distance_manual_box_plates.csv",
+        x_col="gap_fixed",
+        y_col="precursor_distance_manual",
+        title="Spaltabstand vs Vorläuferabstand",
+        xlabel="Spaltabstand d in cm",
+        ylabel="Vorläuferabstand in s",
+        sort_classes=True,
+        y_scale="log",
+        save_path=FIGURES_PATH + "/precursor_distance_manual_box_plates_gap.pdf",
+    )
+    # voltage
+    plot_boxplots_from_csv_classes(
+        CSV_PATH + "/voltage_box_electrodes.csv",
+        x_col="gap_fixed",
+        y_col="voltage",
+        title="Spaltabstand vs Durchbruchspannung",
+        xlabel="Spaltabstand d in cm",
+        ylabel="Durchbruchspannung $U_{break}$ in kV",
+        sort_classes=True,
+        y_scale="log",
+        save_path=FIGURES_PATH + "/voltage_box_electrodes_gap.pdf",
+    )
+    plot_boxplots_from_csv_classes(
+        CSV_PATH + "/voltage_box_plates.csv",
+        x_col="gap_fixed",
+        y_col="voltage",
+        title="Spaltabstand vs Durchbruchspannung",
+        xlabel="Spaltabstand d in cm",
+        ylabel="Durchbruchspannung $U_{break}$ in kV",
+        sort_classes=True,
+        y_scale="log",
+        save_path=FIGURES_PATH + "/voltage_box_plates_gap.pdf",
+    )
+
+    # voltage_drop
+    plot_boxplots_from_csv_classes(
+        CSV_PATH + "/voltage_drop_box_electrodes.csv",
+        x_col="gap_fixed",
+        y_col="voltage_drop",
+        title="Spaltabstand vs Spannungsabfall",
+        xlabel="Spaltabstand d in cm",
+        ylabel="Spannungsabfall $U_{diff}$ in kV",
+        sort_classes=True,
+        y_scale="log",
+        save_path=FIGURES_PATH + "/voltage_drop_box_electrodes_gap.pdf",
+    )
+    plot_boxplots_from_csv_classes(
+        CSV_PATH + "/voltage_drop_box_plates.csv",
+        x_col="gap_fixed",
+        y_col="voltage_drop",
+        title="Spaltabstand vs Spannungsabfall",
+        xlabel="Spaltabstand d in cm",
+        ylabel="Spannungsabfall $U_{diff}$ in kV",
+        sort_classes=True,
+        y_scale="log",
+        save_path=FIGURES_PATH + "/voltage_drop_box_plates_gap.pdf",
     )
