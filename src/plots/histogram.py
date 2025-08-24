@@ -2,6 +2,7 @@ from src.setup import thesis_figure
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+import numpy as np
 
 
 def plot_histogram(
@@ -70,7 +71,6 @@ def plot_histogram(
         ax.set_xticks(xticks)
     if xticklabels is not None:
         ax.set_xticklabels(xticklabels, fontsize=fontsize_ticks)
-
     # Annotate counts on top of bars
     for count, patch in zip(counts, patches):
         x = patch.get_x() + patch.get_width() / 2
