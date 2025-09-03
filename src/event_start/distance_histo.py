@@ -130,3 +130,23 @@ if __name__ == "__main__":
         xlabel="Vorläuferabstand",
         ylabel="Anzahl",
     )
+    plot_log_histo(
+        CSV_PATH=CSV_PATH,
+        FIGURES_PATH=FIGURES_PATH,
+        figures_name="precursor_distance_all.pdf",
+        csv_name="precursor_distance_all",
+        column="precursor_distance",
+        title="Verteilung der Vorläuferabstände",
+        xlabel="Vorläuferabstand",
+        ylabel="Anzahl",
+    )
+    plot_log_histo(
+        CSV_PATH=CSV_PATH,
+        FIGURES_PATH=FIGURES_PATH,
+        figures_name="precursor_distance_hand_all.pdf",
+        csv_name="precursor_distance_manual_all",
+        column="precursor_distance_manual",
+        title="Verteilung der Vorläuferabstände händisch",
+        xlabel="Vorläuferabstand",
+        ylabel="Anzahl",
+    )
