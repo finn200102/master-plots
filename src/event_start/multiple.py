@@ -16,11 +16,11 @@ def discharge_curve(t, A, tau):
 if __name__ == "__main__":
     load_dotenv()
 
-    FIGURES_PATH = os.getenv("FIGURES_PATH") + "/classes"
+    FIGURES_PATH = os.getenv("FIGURES_PATH") + "/event_start"
 
     os.makedirs(FIGURES_PATH, exist_ok=True)
 
-    CSV_PATH = os.getenv("CSV_PATH") + "/classes/"
+    CSV_PATH = os.getenv("CSV_PATH") + "/event_start/"
 
     os.makedirs(FIGURES_PATH, exist_ok=True)
 

@@ -17,6 +17,7 @@ def plot_log_histo(
     title,
     figures_name,
     nbins=25,
+    xlim=None,
 ):
     import os
     import numpy as np
@@ -72,6 +73,8 @@ def plot_log_histo(
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
     ax.set_title(title)
+    if xlim is not None:
+        ax.set_xlim(xlim)
     fig.tight_layout()
 
     out_f = os.path.join(FIGURES_PATH, figures_name)

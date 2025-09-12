@@ -93,3 +93,14 @@ if __name__ == "__main__":
         sort_classes=True,
         save_path=FIGURES_PATH + "/features_streamer_hand_precursor_distance_box.pdf",
     )
+
+    plot_boxplots_from_csv_classes(
+        CSV_PATH + "/features_streamer_hand_event_duration_histo.csv",
+        x_col="gap_fixed",
+        y_col="event_duration",
+        title="Spaltabstand vs Eventlänge",
+        xlabel="Spaltabstand d in cm",
+        ylabel="Eventlänge in s",
+        sort_classes=True,
+        save_path=FIGURES_PATH + "/features_streamer_hand_event_duration_box.pdf",
+    )
